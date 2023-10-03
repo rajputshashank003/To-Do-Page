@@ -1,0 +1,88 @@
+.main{
+    background-color: rgb(224, 247, 247);
+    height: 500px;
+    width: 240px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows:30%;
+
+    border: 5px solid black;
+    border-radius: 20px;
+
+    box-shadow: 5px 3px 20px rgb(56, 52, 52);
+}
+.notch{
+    height: 15px;
+    width: 50px;
+    background-color: black;
+    border-radius: 25px;
+    margin-left:40%;
+    margin-top:2%;
+    padding: 0px;
+}
+.header{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+h1{
+    margin-left:20%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+input{
+    outline: 0;
+    border: 0px;
+    background-color: rgb(224, 247, 247);
+    padding: 0px;
+    padding-left: 5%;
+    margin: 0px;
+    font-size:medium;
+    width: 60%;
+    height: 2em;
+
+    border-bottom: 3px dotted black;
+}
+
+input:hover{
+    background-color: rgb(184, 242, 242);
+    filter:blur(5%);
+    border-radius: 5px;
+}
+
+.add{
+    border: 0px;
+    background-color: rgb(27, 215, 27);
+    color:blanchedalmond;
+    height: 30px;
+    width: 30px;
+    border-radius: 30px;
+}
+
+.add:hover{
+    background-color: rgb(26, 68, 26);
+}
+
+.list {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    padding: 5%;
+}
+ul {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: larger;
+}
+
+li{
+    margin-top: 5%;
+}
+.delete{
+    background-color: rgb(251, 30, 30);
+    color: rgb(248, 249, 244);
+    border: 0px;
+    border-radius: 5px;
+}
+.delete:hover{
+    background-color: rgb(161, 7, 7);
+
+}
