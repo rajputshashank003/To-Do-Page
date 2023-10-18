@@ -1,31 +1,55 @@
 let btn = document.querySelector(".add");
 let input = document.querySelector("input");
-let ul = document.querySelector(".ul");
-
-let ul2 = document.querySelector(".ul2");
+let list = document.querySelector(".list");
+let delbtn = document.querySelector(".delete");
 
 btn.addEventListener("click",function(){
-    let item = document.createElement("li");
-    item.innerText = input.value + " ";
+    let item = document.createElement("div");
+    item.classList.add("data");
+
+    let checkbtn = document.createElement("input");
+    checkbtn.type = "radio";
+    checkbtn.classList.add("checkbox-1");
+
+    let textVal = input.value + " ";
+    textVal = textVal.charAt(0).toUpperCase() + textVal.slice(1);
+    
+    let span = document.createElement("span");
+    span.className = "hello";
+    span.append(textVal);
 
     let delbtn = document.createElement("button");
-    delbtn.innerText = "delete";
+    delbtn.innerText = "X";
     delbtn.classList.add("delete");
-    
+
+    item.appendChild(checkbtn);
+    item.appendChild(span);
     item.appendChild(delbtn);
-    ul.appendChild(item);
+    list.appendChild(item);
     
     input.value = "";
 });
 
-ul.addEventListener("click",function(event){
-    if(event.target.nodeName == "BUTTON"){
-        let eventdel = event.target.parentElement;
-        eventdel.remove();
-        console.log(event.target.parentElement)
+list.addEventListener("click", function (event) {
+    if (event.target.classList.contains("delete")) {
+        let delData = event.target.parentElement;
+        delData.remove();
+    }
+});      
+
+let x = 0;
+
+list.addEventListener("click" ,() => {
+    if(event.target.classList.contains("checkbox-1")){
+        let delData = event.target.parentElement;
+        if(x == 0){
+            delData.children[0].checked = true;
+            x = 1;
+            delData.children[1].className = "strikethrough";
+        } else if(x == 1){
+            delData.children[0].checked = false;
+            x = 0;
+            delData.children[1].className = "hello";
+        }
     }
 });
-
-
-                 
-        
