@@ -8,7 +8,7 @@ btn.addEventListener("click",function(){
     item.classList.add("data");
 
     let checkbtn = document.createElement("input");
-    checkbtn.type = "radio";
+    checkbtn.type = "checkbox";
     checkbtn.classList.add("checkbox-1");
 
     let textVal = input.value + " ";
@@ -37,19 +37,14 @@ list.addEventListener("click", function (event) {
     }
 });      
 
-let x = 0;
-
 list.addEventListener("click" ,() => {
     if(event.target.classList.contains("checkbox-1")){
         let delData = event.target.parentElement;
-        if(x == 0){
-            delData.children[0].checked = true;
-            x = 1;
+        if(delData.children[0].checked){
             delData.children[1].className = "strikethrough";
-        } else if(x == 1){
-            delData.children[0].checked = false;
-            x = 0;
+        } else{
             delData.children[1].className = "hello";
         }
+
     }
 });
